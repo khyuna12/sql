@@ -170,12 +170,16 @@
         ```
 
     - **Pair RDD**
+      - (key, value) 쌍
       - 키-값 쌍은 간단하고 범용적이고 확장성이 뛰어난 데이터 모델
       - 새로운 타입의 키와 값을 손쉽게 추가 가능, 키-값 쌍을 독립적으로 저장 가능
-      - 여러 프레임워크와 애플리케이션의 기본 요소
       - 키와 값에 정수형이나 문자열 등 기본 타입과 복잡한 데이터 구조도 사용 가능
       - 전통적으로 *연관 배열(associative array)*이라는 자료 구조 사용(파이썬에서는 딕셔너리, 스칼라와 자바에서는 맵)
-      - Spark Context의 일부 메서드는 Pair RDD를 기본으로 반환
+      - **변환 연산자**
+        - `keys`, `values`, `mapValues`, `flatMapValues`, `aggregateBykey`, `ReduceBykey`, `foldBykey`
+      - **행동 연산자**
+        - `countByKey`. `lookup`, `sortBykey`
+        - join: `leftOuterjoin`, `rightOuterjoin`, `fullOuterjoin`
   
 
     - *복원성*: 노드에 장애가 발생해도 데이터 셋을 재구성
